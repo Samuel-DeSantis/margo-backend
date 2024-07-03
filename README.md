@@ -1,24 +1,34 @@
-# README
+# margo-backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Models
 
-Things you may want to cover:
+### Cables
 
-* Ruby version
+|  Attribute  |  Type   |
+|-------------|---------|
+| tag         | string  |
+| conduit_id  | integer |
 
-* System dependencies
 
-* Configuration
+### Conduits
 
-* Database creation
+| Attribute | Type   |
+|-----------|--------|
+| tag       | string |
+| size      | float  |
+| to        | string |
+| from      | string |
 
-* Database initialization
+### Projects
 
-* How to run the test suite
+| Attribute |  Type   |
+|-----------|---------|
+| name      | string  |
+| user_id   | integer |
 
-* Services (job queues, cache servers, search engines, etc.)
+### User
 
-* Deployment instructions
-
-* ...
+|    Attribute    |  Type   |
+|-----------------|---------|
+| username        | string  |
+| password_digest | integer |
