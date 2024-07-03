@@ -1,0 +1,633 @@
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCables (20240703182007)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "cables" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tag" varchar, "size" float, "from" varchar, "to" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240703182007"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateConduits (20240703185127)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "conduits" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tag" varchar, "length" integer, "outer_diameter" float, "conduit_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240703185127"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-07-03 18:52:53.782589"], ["updated_at", "2024-07-03 18:52:53.782589"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mConduit Load (0.1ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mCable Load (0.4ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DropConduits (20240703192314)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE "conduits"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240703192314"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DropCables (20240703192324)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "cables"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240703192324"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateConduits (20240703192640)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "conduits" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tag" varchar, "size" float, "to" varchar, "from" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240703192640"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCables (20240703192733)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "cables" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tag" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240703192733"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddConduitIdToCables (20240703192835)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "cables" ADD "conduit_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240703192835"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Create (2.2ms)[0m  [1m[32mINSERT INTO "conduits" ("tag", "size", "to", "from", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tag", "K-01"], ["size", 1.0], ["to", "B"], ["from", "A"], ["created_at", "2024-07-03 19:29:33.127022"], ["updated_at", "2024-07-03 19:29:33.127022"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Create (1.3ms)[0m  [1m[32mINSERT INTO "conduits" ("tag", "size", "to", "from", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tag", "K-02"], ["size", 1.0], ["to", "B"], ["from", "A"], ["created_at", "2024-07-03 19:29:33.136050"], ["updated_at", "2024-07-03 19:29:33.136050"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Create (1.4ms)[0m  [1m[32mINSERT INTO "conduits" ("tag", "size", "to", "from", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tag", "K-03"], ["size", 1.0], ["to", "B"], ["from", "A"], ["created_at", "2024-07-03 19:29:33.142065"], ["updated_at", "2024-07-03 19:29:33.142065"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Create (0.7ms)[0m  [1m[32mINSERT INTO "conduits" ("tag", "size", "to", "from", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tag", "K-04"], ["size", 1.0], ["to", "B"], ["from", "A"], ["created_at", "2024-07-03 19:29:33.147365"], ["updated_at", "2024-07-03 19:29:33.147365"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Create (0.9ms)[0m  [1m[32mINSERT INTO "conduits" ("tag", "size", "to", "from", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tag", "K-01"], ["size", 1.0], ["to", "B"], ["from", "A"], ["created_at", "2024-07-03 19:31:53.545978"], ["updated_at", "2024-07-03 19:31:53.545978"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Create (0.8ms)[0m  [1m[32mINSERT INTO "conduits" ("tag", "size", "to", "from", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tag", "K-02"], ["size", 1.0], ["to", "B"], ["from", "A"], ["created_at", "2024-07-03 19:31:53.551113"], ["updated_at", "2024-07-03 19:31:53.551113"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Create (1.3ms)[0m  [1m[32mINSERT INTO "conduits" ("tag", "size", "to", "from", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tag", "K-03"], ["size", 1.0], ["to", "B"], ["from", "A"], ["created_at", "2024-07-03 19:31:53.555939"], ["updated_at", "2024-07-03 19:31:53.555939"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Create (0.7ms)[0m  [1m[32mINSERT INTO "conduits" ("tag", "size", "to", "from", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tag", "K-04"], ["size", 1.0], ["to", "B"], ["from", "A"], ["created_at", "2024-07-03 19:31:53.560545"], ["updated_at", "2024-07-03 19:31:53.560545"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (1.2ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-01"], ["created_at", "2024-07-03 19:31:53.574025"], ["updated_at", "2024-07-03 19:31:53.574025"], ["conduit_id", 1]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (0.8ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-02"], ["created_at", "2024-07-03 19:31:53.578611"], ["updated_at", "2024-07-03 19:31:53.578611"], ["conduit_id", 1]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (1.3ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-03"], ["created_at", "2024-07-03 19:31:53.582617"], ["updated_at", "2024-07-03 19:31:53.582617"], ["conduit_id", 1]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (1.3ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-04"], ["created_at", "2024-07-03 19:31:53.587088"], ["updated_at", "2024-07-03 19:31:53.587088"], ["conduit_id", 1]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (1.0ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-05"], ["created_at", "2024-07-03 19:31:53.593645"], ["updated_at", "2024-07-03 19:31:53.593645"], ["conduit_id", 2]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (2.4ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-06"], ["created_at", "2024-07-03 19:31:53.599752"], ["updated_at", "2024-07-03 19:31:53.599752"], ["conduit_id", 2]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (1.6ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-07"], ["created_at", "2024-07-03 19:31:53.608846"], ["updated_at", "2024-07-03 19:31:53.608846"], ["conduit_id", 2]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (0.9ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-08"], ["created_at", "2024-07-03 19:31:53.614184"], ["updated_at", "2024-07-03 19:31:53.614184"], ["conduit_id", 2]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (1.5ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-09"], ["created_at", "2024-07-03 19:31:53.618512"], ["updated_at", "2024-07-03 19:31:53.618512"], ["conduit_id", 3]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (0.8ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-10"], ["created_at", "2024-07-03 19:31:53.623649"], ["updated_at", "2024-07-03 19:31:53.623649"], ["conduit_id", 3]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (1.1ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-11"], ["created_at", "2024-07-03 19:31:53.627610"], ["updated_at", "2024-07-03 19:31:53.627610"], ["conduit_id", 3]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (0.7ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-12"], ["created_at", "2024-07-03 19:31:53.631677"], ["updated_at", "2024-07-03 19:31:53.631677"], ["conduit_id", 3]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (1.3ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-13"], ["created_at", "2024-07-03 19:31:53.635664"], ["updated_at", "2024-07-03 19:31:53.635664"], ["conduit_id", 4]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (0.9ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-14"], ["created_at", "2024-07-03 19:31:53.640752"], ["updated_at", "2024-07-03 19:31:53.640752"], ["conduit_id", 4]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (1.1ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-15"], ["created_at", "2024-07-03 19:31:53.644896"], ["updated_at", "2024-07-03 19:31:53.644896"], ["conduit_id", 4]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (1.4ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-16"], ["created_at", "2024-07-03 19:31:53.649348"], ["updated_at", "2024-07-03 19:31:53.649348"], ["conduit_id", 4]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mConduit Delete All (4.9ms)[0m  [1m[31mDELETE FROM "conduits"[0m
+  [1m[36mCable Delete All (6.5ms)[0m  [1m[31mDELETE FROM "cables"[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? AND "conduits"."size" = ? AND "conduits"."from" = ? AND "conduits"."to" = ? LIMIT ?[0m  [["tag", "K-01"], ["size", 1.0], ["from", "A"], ["to", "B"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Create (1.0ms)[0m  [1m[32mINSERT INTO "conduits" ("tag", "size", "to", "from", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tag", "K-01"], ["size", 1.0], ["to", "B"], ["from", "A"], ["created_at", "2024-07-03 19:38:59.156550"], ["updated_at", "2024-07-03 19:38:59.156550"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? AND "conduits"."size" = ? AND "conduits"."from" = ? AND "conduits"."to" = ? LIMIT ?[0m  [["tag", "K-02"], ["size", 1.0], ["from", "A"], ["to", "B"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Create (1.4ms)[0m  [1m[32mINSERT INTO "conduits" ("tag", "size", "to", "from", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tag", "K-02"], ["size", 1.0], ["to", "B"], ["from", "A"], ["created_at", "2024-07-03 19:38:59.162907"], ["updated_at", "2024-07-03 19:38:59.162907"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? AND "conduits"."size" = ? AND "conduits"."from" = ? AND "conduits"."to" = ? LIMIT ?[0m  [["tag", "K-03"], ["size", 1.0], ["from", "A"], ["to", "B"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Create (1.0ms)[0m  [1m[32mINSERT INTO "conduits" ("tag", "size", "to", "from", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tag", "K-03"], ["size", 1.0], ["to", "B"], ["from", "A"], ["created_at", "2024-07-03 19:38:59.169657"], ["updated_at", "2024-07-03 19:38:59.169657"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? AND "conduits"."size" = ? AND "conduits"."from" = ? AND "conduits"."to" = ? LIMIT ?[0m  [["tag", "K-04"], ["size", 1.0], ["from", "A"], ["to", "B"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Create (0.8ms)[0m  [1m[32mINSERT INTO "conduits" ("tag", "size", "to", "from", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tag", "K-04"], ["size", 1.0], ["to", "B"], ["from", "A"], ["created_at", "2024-07-03 19:38:59.175393"], ["updated_at", "2024-07-03 19:38:59.175393"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-01"], ["conduit_id", 1], ["LIMIT", 1]]
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-02"], ["conduit_id", 1], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-03"], ["conduit_id", 1], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-04"], ["conduit_id", 1], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-05"], ["conduit_id", 2], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-06"], ["conduit_id", 2], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-07"], ["conduit_id", 2], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-08"], ["conduit_id", 2], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-09"], ["conduit_id", 3], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-10"], ["conduit_id", 3], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-11"], ["conduit_id", 3], ["LIMIT", 1]]
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-12"], ["conduit_id", 3], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-13"], ["conduit_id", 4], ["LIMIT", 1]]
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-14"], ["conduit_id", 4], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-15"], ["conduit_id", 4], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-16"], ["conduit_id", 4], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? AND "conduits"."size" = ? AND "conduits"."from" = ? AND "conduits"."to" = ? LIMIT ?[0m  [["tag", "K-01"], ["size", 1.0], ["from", "A"], ["to", "B"], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? AND "conduits"."size" = ? AND "conduits"."from" = ? AND "conduits"."to" = ? LIMIT ?[0m  [["tag", "K-02"], ["size", 1.0], ["from", "A"], ["to", "B"], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.1ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? AND "conduits"."size" = ? AND "conduits"."from" = ? AND "conduits"."to" = ? LIMIT ?[0m  [["tag", "K-03"], ["size", 1.0], ["from", "A"], ["to", "B"], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.1ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? AND "conduits"."size" = ? AND "conduits"."from" = ? AND "conduits"."to" = ? LIMIT ?[0m  [["tag", "K-04"], ["size", 1.0], ["from", "A"], ["to", "B"], ["LIMIT", 1]]
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-01"], ["conduit_id", 9], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-02"], ["conduit_id", 9], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-03"], ["conduit_id", 9], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-04"], ["conduit_id", 9], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-05"], ["conduit_id", 10], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-06"], ["conduit_id", 10], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-07"], ["conduit_id", 10], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-08"], ["conduit_id", 10], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-09"], ["conduit_id", 11], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-10"], ["conduit_id", 11], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-11"], ["conduit_id", 11], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-12"], ["conduit_id", 11], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-13"], ["conduit_id", 12], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-14"], ["conduit_id", 12], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-15"], ["conduit_id", 12], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."tag" = ? AND "cables"."conduit_id" = ? LIMIT ?[0m  [["tag", "P-16"], ["conduit_id", 12], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? LIMIT ?[0m  [["tag", "K-01"], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? LIMIT ?[0m  [["tag", "K-01"], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? LIMIT ?[0m  [["tag", "K-01"], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? LIMIT ?[0m  [["tag", "K-01"], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.4ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? LIMIT ?[0m  [["tag", "K-01"], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? LIMIT ?[0m  [["tag", "K-01"], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 9]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? LIMIT ?[0m  [["tag", "K-01"], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? LIMIT ?[0m  [["tag", "K-01"], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 9]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? LIMIT ?[0m  [["tag", "K-01"], ["LIMIT", 1]]
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ? ORDER BY "cables"."id" ASC LIMIT ?[0m  [["conduit_id", 9], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.3ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? LIMIT ?[0m  [["tag", "K-01"], ["LIMIT", 1]]
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ? ORDER BY "cables"."id" ASC LIMIT ?[0m  [["conduit_id", 9], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? LIMIT ?[0m  [["tag", "K-01"], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 9]]
+  [1m[36mCable Load (0.3ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? LIMIT ?[0m  [["tag", "K-01"], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 9]]
+  [1m[36mConduit Load (0.4ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 9]]
+  [1m[36mConduit Load (0.3ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 9]]
+  [1m[36mConduit Load (0.3ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  [1m[36mConduit Load (0.3ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mConduit Load (0.3ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 9]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mConduit Load (0.4ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 9]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (3.5ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-01"], ["created_at", "2024-07-03 19:57:48.595355"], ["updated_at", "2024-07-03 19:57:48.595355"], ["conduit_id", 9]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" ORDER BY "cables"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Destroy (5.4ms)[0m  [1m[31mDELETE FROM "conduits" WHERE "conduits"."id" = ?[0m  [["id", 9]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Destroy (0.8ms)[0m  [1m[31mDELETE FROM "conduits" WHERE "conduits"."id" = ?[0m  [["id", 10]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Destroy (0.7ms)[0m  [1m[31mDELETE FROM "conduits" WHERE "conduits"."id" = ?[0m  [["id", 11]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Destroy (1.0ms)[0m  [1m[31mDELETE FROM "conduits" WHERE "conduits"."id" = ?[0m  [["id", 12]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCable Load (0.3ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Destroy (1.3ms)[0m  [1m[31mDELETE FROM "cables" WHERE "cables"."id" = ?[0m  [["id", 17]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mConduit Load (0.3ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? AND "conduits"."size" = ? AND "conduits"."from" = ? AND "conduits"."to" = ? LIMIT ?[0m  [["tag", "K-01"], ["size", 1.0], ["from", "A"], ["to", "B"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Create (0.9ms)[0m  [1m[32mINSERT INTO "conduits" ("tag", "size", "to", "from", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tag", "K-01"], ["size", 1.0], ["to", "B"], ["from", "A"], ["created_at", "2024-07-03 20:02:07.239931"], ["updated_at", "2024-07-03 20:02:07.239931"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ? AND "cables"."tag" = ? LIMIT ?[0m  [["conduit_id", 13], ["tag", "P-01"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (0.8ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-01"], ["created_at", "2024-07-03 20:02:07.264646"], ["updated_at", "2024-07-03 20:02:07.264646"], ["conduit_id", 13]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ? AND "cables"."tag" = ? LIMIT ?[0m  [["conduit_id", 13], ["tag", "P-02"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (0.8ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-02"], ["created_at", "2024-07-03 20:02:07.270128"], ["updated_at", "2024-07-03 20:02:07.270128"], ["conduit_id", 13]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mConduit Load (0.1ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? AND "conduits"."size" = ? AND "conduits"."from" = ? AND "conduits"."to" = ? LIMIT ?[0m  [["tag", "K-02"], ["size", 1.0], ["from", "A"], ["to", "B"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Create (0.8ms)[0m  [1m[32mINSERT INTO "conduits" ("tag", "size", "to", "from", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tag", "K-02"], ["size", 1.0], ["to", "B"], ["from", "A"], ["created_at", "2024-07-03 20:02:07.275135"], ["updated_at", "2024-07-03 20:02:07.275135"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ? AND "cables"."tag" = ? LIMIT ?[0m  [["conduit_id", 14], ["tag", "P-03"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (1.5ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-03"], ["created_at", "2024-07-03 20:02:07.280743"], ["updated_at", "2024-07-03 20:02:07.280743"], ["conduit_id", 14]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ? AND "cables"."tag" = ? LIMIT ?[0m  [["conduit_id", 14], ["tag", "P-04"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (0.9ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-04"], ["created_at", "2024-07-03 20:02:07.287374"], ["updated_at", "2024-07-03 20:02:07.287374"], ["conduit_id", 14]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mConduit Load (0.1ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."tag" = ? AND "conduits"."size" = ? AND "conduits"."from" = ? AND "conduits"."to" = ? LIMIT ?[0m  [["tag", "K-03"], ["size", 1.0], ["from", "A"], ["to", "B"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConduit Create (1.0ms)[0m  [1m[32mINSERT INTO "conduits" ("tag", "size", "to", "from", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tag", "K-03"], ["size", 1.0], ["to", "B"], ["from", "A"], ["created_at", "2024-07-03 20:02:07.293323"], ["updated_at", "2024-07-03 20:02:07.293323"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ? AND "cables"."tag" = ? LIMIT ?[0m  [["conduit_id", 15], ["tag", "P-05"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (1.1ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-05"], ["created_at", "2024-07-03 20:02:07.300456"], ["updated_at", "2024-07-03 20:02:07.300456"], ["conduit_id", 15]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ? AND "cables"."tag" = ? LIMIT ?[0m  [["conduit_id", 15], ["tag", "P-06"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCable Create (3.6ms)[0m  [1m[32mINSERT INTO "cables" ("tag", "created_at", "updated_at", "conduit_id") VALUES (?, ?, ?, ?)[0m  [["tag", "P-06"], ["created_at", "2024-07-03 20:02:07.307245"], ["updated_at", "2024-07-03 20:02:07.307245"], ["conduit_id", 15]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  [1m[36mCable Load (0.8ms)[0m  [1m[34mSELECT "cables".* FROM "cables" ORDER BY "cables"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mConduit Load (0.3ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" ORDER BY "cables"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mConduit Load (0.3ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 13]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProjects (20240703200439)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "projects" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240703200439"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20240703200903)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240703200903"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (4.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "sdesantis"], ["password_digest", "[FILTERED]"], ["created_at", "2024-07-03 20:24:55.501109"], ["updated_at", "2024-07-03 20:24:55.501109"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserIdToProjects (20240703202727)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "projects" ADD "user_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240703202727"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddProjectIdToConduits (20240703202803)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "conduits" ADD "project_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240703202803"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProject Create (3.8ms)[0m  [1m[32mINSERT INTO "projects" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "SoCal"], ["created_at", "2024-07-03 20:29:23.372283"], ["updated_at", "2024-07-03 20:29:23.372283"], ["user_id", 1]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mConduit Load (0.3ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mConduit Load (0.3ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConduit Update (1.3ms)[0m  [1m[33mUPDATE "conduits" SET "updated_at" = ?, "project_id" = ? WHERE "conduits"."id" = ?[0m  [["updated_at", "2024-07-03 20:33:22.951450"], ["project_id", 1], ["id", 13]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConduit Update (0.9ms)[0m  [1m[33mUPDATE "conduits" SET "updated_at" = ?, "project_id" = ? WHERE "conduits"."id" = ?[0m  [["updated_at", "2024-07-03 20:33:22.965272"], ["project_id", 1], ["id", 14]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConduit Update (1.2ms)[0m  [1m[33mUPDATE "conduits" SET "updated_at" = ?, "project_id" = ? WHERE "conduits"."id" = ?[0m  [["updated_at", "2024-07-03 20:33:22.972829"], ["project_id", 1], ["id", 15]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ? ORDER BY "projects"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ? ORDER BY "projects"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.1ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ? ORDER BY "projects"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.1ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[36mCable Load (0.3ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 13]]
+  [1m[36mCable Load (0.5ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 14]]
+  [1m[36mCable Load (0.3ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 15]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ? ORDER BY "projects"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 13]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 14]]
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 15]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mConduit Load (0.1ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."project_id" = ? ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["project_id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mConduit Load (0.1ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."project_id" = ? ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["project_id", 1], ["LIMIT", 1]]
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 13]]
+  [1m[36mCable Load (0.3ms)[0m  [1m[34mSELECT "cables".* FROM "cables" ORDER BY "cables"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" ORDER BY "cables"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCable Load (0.3ms)[0m  [1m[34mSELECT "cables".* FROM "cables" ORDER BY "cables"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mConduit Load (0.4ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" ORDER BY "cables"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mConduit Load (0.1ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2024-07-03 14:40:47 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/sdesantis/.rvm/gems/ruby-3.0.0/gems/railties-7.0.8.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/sdesantis/.rvm/gems/ruby-3.0.0/gems/railties-7.0.8.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 37.4ms | Allocations: 831)
+Completed 200 OK in 170ms (Views: 78.1ms | ActiveRecord: 0.0ms | Allocations: 7801)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-03 14:40:52 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/sdesantis/.rvm/gems/ruby-3.0.0/gems/railties-7.0.8.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/sdesantis/.rvm/gems/ruby-3.0.0/gems/railties-7.0.8.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 452)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 1326)
+
+
+Started GET "/conduits" for 127.0.0.1 at 2024-07-03 14:40:59 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/conduits"):
+  
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-07-03 14:40:59 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/conduits" for 127.0.0.1 at 2024-07-03 14:42:13 -0600
+  
+ActionController::RoutingError (uninitialized constant ConduitsController
+Did you mean?  ConduitController):
+  
+Started GET "/conduits" for 127.0.0.1 at 2024-07-03 14:43:07 -0600
+  
+ActionController::RoutingError (uninitialized constant ConduitsController
+Did you mean?  ConduitController):
+  
+Started GET "/conduits" for 127.0.0.1 at 2024-07-03 14:44:01 -0600
+Processing by ConduitsController#index as HTML
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4532)
+
+
+Started GET "/conduits" for 127.0.0.1 at 2024-07-03 14:44:13 -0600
+Processing by ConduitsController#index as HTML
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  ↳ app/controllers/conduits_controller.rb:4:in `index'
+Completed 200 OK in 27ms (Views: 20.2ms | ActiveRecord: 1.4ms | Allocations: 20892)
+
+
+Started GET "/cables" for 127.0.0.1 at 2024-07-03 14:44:46 -0600
+Processing by CablesController#index as HTML
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 9.2ms | ActiveRecord: 1.3ms | Allocations: 16720)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-03 14:45:08 -0600
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 1.5ms | Allocations: 17166)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-07-03 14:45:14 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 1.1ms | Allocations: 16172)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-07-03 14:46:29 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 5.1ms | ActiveRecord: 2.3ms | Allocations: 4383)
+
+
+Started GET "/conduits" for 127.0.0.1 at 2024-07-03 14:48:09 -0600
+Processing by ConduitsController#index as HTML
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  ↳ app/controllers/conduits_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 4.8ms | ActiveRecord: 1.4ms | Allocations: 6421)
+
+
+Started GET "/conduits/13" for 127.0.0.1 at 2024-07-03 14:48:13 -0600
+Processing by ConduitsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mConduit Load (0.6ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/conduits_controller.rb:8:in `show'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1747)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-07-03 14:49:26 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 1.5ms | Allocations: 4348)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-07-03 14:49:27 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 968)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-07-03 14:51:12 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 150)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-07-03 14:51:55 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 147)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-07-03 14:51:59 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 75)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-07-03 14:52:35 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `set_user'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 4650)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-07-03 14:53:16 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 4549)
+
+
+Started GET "/conduits" for 127.0.0.1 at 2024-07-03 15:01:19 -0600
+Processing by ConduitsController#index as HTML
+  [1m[36mConduit Load (0.4ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  ↳ app/controllers/conduits_controller.rb:4:in `index'
+Completed 200 OK in 17ms (Views: 6.3ms | ActiveRecord: 1.6ms | Allocations: 6500)
+
+
+Started GET "/cables" for 127.0.0.1 at 2024-07-03 15:01:19 -0600
+Processing by CablesController#index as HTML
+  [1m[36mCable Load (0.3ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 1.0ms | Allocations: 4445)
+
+
+Started GET "/cable/1" for 127.0.0.1 at 2024-07-03 15:01:22 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable/1"):
+  
+Started GET "/cables" for 127.0.0.1 at 2024-07-03 15:01:28 -0600
+Processing by CablesController#index as HTML
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 1240)
+
+
+Started GET "/cables/18" for 127.0.0.1 at 2024-07-03 15:01:32 -0600
+Processing by CablesController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mCable Load (0.3ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/cables_controller.rb:16:in `set_cable'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 969)
+
+
+Started GET "/conduits" for 127.0.0.1 at 2024-07-03 15:02:19 -0600
+Processing by ConduitsController#index as HTML
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  ↳ app/controllers/conduits_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 5.4ms | ActiveRecord: 1.7ms | Allocations: 6487)
+
+
+Started GET "/conduits/13" for 127.0.0.1 at 2024-07-03 15:02:22 -0600
+Processing by ConduitsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mConduit Load (0.3ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/conduits_controller.rb:16:in `set_conduit'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1010)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-03 15:03:07 -0600
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 4.0ms | ActiveRecord: 1.4ms | Allocations: 5414)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2024-07-03 15:03:13 -0600
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:16:in `set_project'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 971)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-07-03 15:03:51 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 1.4ms | Allocations: 4381)
+
+
+Started GET "/users/s" for 127.0.0.1 at 2024-07-03 15:03:52 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"s"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `set_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 862)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-07-03 15:03:54 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `set_user'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 614)
+
+

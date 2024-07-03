@@ -2,12 +2,6 @@
 
 one:
   tag: MyString
-  size: 1.5
-  from: MyString
-  to: MyString
 
 two:
   tag: MyString
-  size: 1.5
-  from: MyString
-  to: MyString
