@@ -631,3 +631,314 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 614)
 
 
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ? /* loading for inspect */ LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ? /* loading for inspect */ LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ? ORDER BY "projects"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.3ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ? ORDER BY "projects"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."project_id" = ? ORDER BY "conduits"."id" ASC LIMIT ?[0m  [["project_id", 1], ["LIMIT", 1]]
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."conduit_id" = ?[0m  [["conduit_id", 13]]
+Started GET "/" for 127.0.0.1 at 2024-07-14 20:35:26 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/sdesantis/.rvm/gems/ruby-3.0.0/gems/railties-7.0.8.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/sdesantis/.rvm/gems/ruby-3.0.0/gems/railties-7.0.8.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 30.6ms | Allocations: 727)
+Completed 200 OK in 133ms (Views: 54.1ms | ActiveRecord: 0.0ms | Allocations: 6538)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-14 20:35:31 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/sdesantis/.rvm/gems/ruby-3.0.0/gems/railties-7.0.8.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/sdesantis/.rvm/gems/ruby-3.0.0/gems/railties-7.0.8.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.1ms | Allocations: 452)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 1326)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-07-14 20:35:39 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 45ms (Views: 18.5ms | ActiveRecord: 1.0ms | Allocations: 18910)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-07-14 20:35:40 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/users" for 127.0.0.1 at 2024-07-14 20:43:47 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.5ms | Allocations: 871)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-07-14 20:44:16 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 740)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-14 20:45:06 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 29ms (Views: 8.7ms | ActiveRecord: 0.8ms | Allocations: 17757)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-14 20:47:11 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 719)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-07-14 20:47:16 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 739)
+
+
+Started GET "/cables" for 127.0.0.1 at 2024-07-14 20:47:25 -0600
+Processing by CablesController#index as */*
+  [1m[36mCable Load (0.3ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 31ms (Views: 25.4ms | ActiveRecord: 1.2ms | Allocations: 16611)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-07-14 20:47:54 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 728)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-14 20:47:59 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 721)
+
+
+Started GET "/condduits" for 127.0.0.1 at 2024-07-14 20:48:05 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/condduits"):
+  
+Started GET "/conduits" for 127.0.0.1 at 2024-07-14 20:48:09 -0600
+Processing by ConduitsController#index as */*
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  ↳ app/controllers/conduits_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 0.9ms | Allocations: 18821)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-07-14 20:48:32 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 728)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-07-14 20:48:38 -0600
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `set_user'
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1727)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2024-07-14 20:48:42 -0600
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `set_user'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 510)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-14 20:48:47 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 721)
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2024-07-14 20:48:51 -0600
+Processing by ProjectsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:20:in `set_project'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 867)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2024-07-14 20:49:01 -0600
+Processing by ProjectsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:20:in `set_project'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 610)
+
+
+Started GET "/exit" for 127.0.0.1 at 2024-07-14 20:51:52 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/exit"):
+  
+Started GET "/exit" for 127.0.0.1 at 2024-07-14 20:51:53 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/exit"):
+  
+Started GET "/exit" for 127.0.0.1 at 2024-07-14 20:52:23 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/exit"):
+  
+Started GET "/exit" for 127.0.0.1 at 2024-07-14 20:52:44 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/exit"):
+  
+Started GET "/exit" for 127.0.0.1 at 2024-07-14 20:52:52 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/exit"):
+  
+Started GET "/users" for 127.0.0.1 at 2024-07-14 20:53:09 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 725)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-07-14 20:53:13 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 726)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-07-14 20:54:20 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 726)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-14 20:54:27 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 719)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-14 20:54:32 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 719)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-07-14 20:54:39 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 726)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-07-14 20:54:41 -0600
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `set_user'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 614)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2024-07-14 20:54:44 -0600
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `set_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 506)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-07-14 20:56:11 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 726)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-14 20:56:15 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 719)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2024-07-14 20:56:19 -0600
+Processing by ProjectsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:20:in `set_project'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 609)
+
+
+Started GET "/cables" for 127.0.0.1 at 2024-07-14 20:56:21 -0600
+Processing by CablesController#index as */*
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1247)
+
+
+Started GET "/cables/18" for 127.0.0.1 at 2024-07-14 20:56:26 -0600
+Processing by CablesController#show as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/cables_controller.rb:20:in `set_cable'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 973)
+
+
+Started GET "/cables/22" for 127.0.0.1 at 2024-07-14 20:56:40 -0600
+Processing by CablesController#show as */*
+  Parameters: {"id"=>"22"}
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/cables_controller.rb:20:in `set_cable'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 609)
+
+
+Started GET "/users/1/projects" for 127.0.0.1 at 2024-07-14 20:59:36 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/projects"):
+  
+Started GET "/null" for 127.0.0.1 at 2024-07-14 20:59:48 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/null"):
+  
+Started GET "/users" for 127.0.0.1 at 2024-07-14 20:59:54 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 725)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-14 20:59:58 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 719)
+
+
+Started GET "/cables" for 127.0.0.1 at 2024-07-14 21:00:03 -0600
+Processing by CablesController#index as */*
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1245)
+
+
+Started GET "/conduits" for 127.0.0.1 at 2024-07-14 21:00:09 -0600
+Processing by ConduitsController#index as */*
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  ↳ app/controllers/conduits_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1013)
+
+
