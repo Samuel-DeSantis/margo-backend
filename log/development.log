@@ -942,3 +942,415 @@ Processing by ConduitsController#index as */*
 Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1013)
 
 
+Started GET "/users" for 127.0.0.1 at 2024-07-14 21:16:29 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 8.0ms | ActiveRecord: 0.9ms | Allocations: 37719)
+
+
+Started GET "/cables" for 127.0.0.1 at 2024-07-14 21:16:32 -0600
+Processing by CablesController#index as */*
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 17.1ms | ActiveRecord: 0.8ms | Allocations: 17193)
+
+
+Started GET "/ables/1" for 127.0.0.1 at 2024-07-14 21:16:38 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/ables/1"):
+  
+Started GET "/cables/1" for 127.0.0.1 at 2024-07-14 21:16:53 -0600
+Processing by CablesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cables_controller.rb:20:in `set_cable'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1637)
+
+
+Started GET "/cables" for 127.0.0.1 at 2024-07-14 21:16:56 -0600
+Processing by CablesController#index as */*
+  [1m[36mCable Load (0.1ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 1257)
+
+
+Started GET "/cables/18" for 127.0.0.1 at 2024-07-14 21:17:00 -0600
+Processing by CablesController#show as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables" WHERE "cables"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/cables_controller.rb:20:in `set_cable'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 610)
+
+
+Started GET "/cables" for 127.0.0.1 at 2024-07-14 21:22:26 -0600
+Processing by CablesController#index as */*
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1245)
+
+
+Started POST "/cables" for 127.0.0.1 at 2024-07-14 21:23:25 -0600
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for CablesController):
+  
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/cables" for 127.0.0.1 at 2024-07-14 21:23:30 -0600
+Processing by CablesController#index as */*
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1244)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-07-14 21:24:06 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 726)
+
+
+Started GET "/cables" for 127.0.0.1 at 2024-07-14 21:24:12 -0600
+Processing by CablesController#index as HTML
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1241)
+
+
+Started GET "/cables" for 127.0.0.1 at 2024-07-14 21:27:14 -0600
+Processing by CablesController#index as */*
+  [1m[36mCable Load (0.3ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1257)
+
+
+Started GET "/cables" for 127.0.0.1 at 2024-07-14 21:28:40 -0600
+Processing by CablesController#index as */*
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1245)
+
+
+Started POST "/cables" for 127.0.0.1 at 2024-07-14 21:29:16 -0600
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for CablesController):
+  
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/cables" for 127.0.0.1 at 2024-07-14 21:29:19 -0600
+Processing by CablesController#index as */*
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 1244)
+
+
+Started GET "/cables" for 127.0.0.1 at 2024-07-14 21:29:32 -0600
+Processing by CablesController#index as HTML
+  [1m[36mCable Load (0.3ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1241)
+
+
+Started POST "/cables" for 127.0.0.1 at 2024-07-14 21:30:32 -0600
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for CablesController):
+  
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/cables" for 127.0.0.1 at 2024-07-14 21:30:34 -0600
+Processing by CablesController#index as */*
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1244)
+
+
+Started GET "/cables" for 127.0.0.1 at 2024-07-14 21:47:53 -0600
+Processing by CablesController#index as HTML
+  [1m[36mCable Load (0.2ms)[0m  [1m[34mSELECT "cables".* FROM "cables"[0m
+  ↳ app/controllers/cables_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.7ms | Allocations: 1392)
+
+
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Started POST "/[object%20Object]" for 127.0.0.1 at 2024-07-16 22:29:41 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/[object%20Object]"):
+  
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:31:03 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{\"name\":\"PG&E\",\"user_id\":1}", "project"=>{}}
+Completed 400 Bad Request in 71ms (ActiveRecord: 0.4ms | Allocations: 20318)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: project):
+  
+app/controllers/projects_controller.rb:29:in `project_params'
+app/controllers/projects_controller.rb:14:in `create'
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:32:02 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{\"project\":{\"name\":\"PG&E\",\"user_id\":1}}", "project"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 145)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: project):
+  
+app/controllers/projects_controller.rb:29:in `project_params'
+app/controllers/projects_controller.rb:14:in `create'
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:33:53 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{\"name\":\"PG&E\",\"user_id\":1}", "project"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 143)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: project):
+  
+app/controllers/projects_controller.rb:29:in `project_params'
+app/controllers/projects_controller.rb:14:in `create'
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:34:09 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{\"project\":{\"name\":\"PG&E\",\"user_id\":1}}", "project"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 143)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: project):
+  
+app/controllers/projects_controller.rb:29:in `project_params'
+app/controllers/projects_controller.rb:14:in `create'
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:35:58 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{\"project\":{\"name\":\"PG&E\",\"user_id\":1}}", "project"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.7ms | Allocations: 209)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: project):
+  
+app/controllers/projects_controller.rb:29:in `project_params'
+app/controllers/projects_controller.rb:14:in `create'
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:38:01 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{\"project\":{\"name\":\"PG&E\",\"user_id\":1}}", "project"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: project):
+  
+app/controllers/projects_controller.rb:29:in `project_params'
+app/controllers/projects_controller.rb:14:in `create'
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:39:47 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{\"name\":\"PG&E\",\"user_id\":1}", "project"=>{}}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.2ms | Allocations: 14758)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/projects_controller.rb:14:in `create'
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:41:05 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{\"project\":{\"name\":\"PG&E\",\"user_id\":1}}", "project"=>{}}
+Completed 200 OK in 74ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 4993)
+
+
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:41:31 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{\"project\":{\"name\":\"PG&E\",\"user_id\":1}}", "project"=>{}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 306)
+
+
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:42:47 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{\"project\":{\"name\":\"PG&E\",\"user_id\":1}}", "project"=>{}}
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 3292)
+
+
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:43:15 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{\"project\":{\"name\":\"PG&E\",\"user_id\":1}}", "project"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 197)
+
+
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:43:18 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{\"project\":{\"name\":\"PG&E\",\"user_id\":1}}", "project"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 99)
+
+
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:43:24 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{\"project\":{\"name\":\"PG&E\",\"user_id\":1}}", "project"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 227)
+
+
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:44:21 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{\"project\":{\"name\":\"PG&E\",\"user_id\":1}}", "project"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 131)
+
+
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:44:33 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{\"project\":{\"name\":\"PG&E\",\"user_id\":1}}", "project"=>{}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 131)
+
+
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:44:51 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"project"=>{"name"=>"PG&E", "user_id"=>1}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 136)
+
+
+Started POST "/projects" for 127.0.0.1 at 2024-07-16 22:45:13 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"project"=>{"name"=>"PG&E", "user_id"=>1}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+  [1m[36mProject Create (1.7ms)[0m  [1m[32mINSERT INTO "projects" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "PG&E"], ["created_at", "2024-07-17 04:45:13.382556"], ["updated_at", "2024-07-17 04:45:13.382556"], ["user_id", 1]]
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+Completed 200 OK in 64ms (Views: 0.3ms | ActiveRecord: 7.2ms | Allocations: 22262)
+
+
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
