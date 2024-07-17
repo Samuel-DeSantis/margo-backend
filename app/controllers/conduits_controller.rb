@@ -10,6 +10,16 @@ class ConduitsController < ApplicationController
     render json: @conduit
   end
 
+  def create
+    @conduit = Conduit.create(conduit_params)
+    render json: @project
+  end
+
+  def update
+    @conduit.update(conduit_params)
+    render json: @conduit
+  end
+
   def destroy
     @conduit.destroy
   end

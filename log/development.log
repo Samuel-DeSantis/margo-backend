@@ -1354,3 +1354,499 @@ Completed 200 OK in 64ms (Views: 0.3ms | ActiveRecord: 7.2ms | Allocations: 2226
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits" WHERE "conduits"."project_id" = ?[0m  [["project_id", 2]]
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:08:50 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 73ms (Views: 8.9ms | ActiveRecord: 1.0ms | Allocations: 39366)
+
+
+Started GET "/conduits" for 127.0.0.1 at 2024-07-17 12:08:58 -0600
+Processing by ConduitsController#index as */*
+  [1m[36mConduit Load (0.3ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  ↳ app/controllers/conduits_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 8.8ms | ActiveRecord: 1.3ms | Allocations: 19106)
+
+
+Started GET "/conduits" for 127.0.0.1 at 2024-07-17 12:10:25 -0600
+Processing by ConduitsController#index as */*
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  ↳ app/controllers/conduits_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1025)
+
+
+Started GET "/conduits" for 127.0.0.1 at 2024-07-17 12:10:48 -0600
+Processing by ConduitsController#index as */*
+  [1m[36mConduit Load (0.2ms)[0m  [1m[34mSELECT "conduits".* FROM "conduits"[0m
+  ↳ app/controllers/conduits_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1025)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-07-17 12:11:37 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+Started GET "/users" for 127.0.0.1 at 2024-07-17 12:11:43 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 1.1ms | Allocations: 16198)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:11:49 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 832)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:14:29 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 831)
+
+
+Started POST "/projects" for 127.0.0.1 at 2024-07-17 12:15:07 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{'name': 'Xcel', 'user_id': 1}", "project"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 208)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: project):
+  
+app/controllers/projects_controller.rb:29:in `project_params'
+app/controllers/projects_controller.rb:14:in `create'
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:15:12 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 841)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:15:30 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 830)
+
+
+Started POST "/%7B'projects':%20%7B'name':%20'Xcel',%20'user_id':%201%7D%7D" for 127.0.0.1 at 2024-07-17 12:16:03 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/%7B'projects':%20%7B'name':%20'Xcel',%20'user_id':%201%7D%7D"):
+  
+Started POST "/projects" for 127.0.0.1 at 2024-07-17 12:16:33 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{'projects': {'name': 'Xcel", "project"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: project):
+  
+app/controllers/projects_controller.rb:29:in `project_params'
+app/controllers/projects_controller.rb:14:in `create'
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:16:39 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 829)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:16:45 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 830)
+
+
+Started POST "/projects" for 127.0.0.1 at 2024-07-17 12:17:13 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{'projects': {'name': 'Xcel', 'user_id'}}", "project"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: project):
+  
+app/controllers/projects_controller.rb:29:in `project_params'
+app/controllers/projects_controller.rb:14:in `create'
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:17:16 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 829)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:17:34 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 830)
+
+
+Started POST "/projects" for 127.0.0.1 at 2024-07-17 12:17:58 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>"{'project': {'name': 'Xcel', 'user_id': 1}}", "project"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: project):
+  
+app/controllers/projects_controller.rb:29:in `project_params'
+app/controllers/projects_controller.rb:14:in `create'
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:18:03 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 829)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:18:36 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 830)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:19:10 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 830)
+
+
+Started POST "/projects" for 127.0.0.1 at 2024-07-17 12:19:43 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"projects"=>{"name"=>"Xcel", "user_id"=>1}, "project"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 160)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: project
+Did you mean?  projects):
+  
+app/controllers/projects_controller.rb:29:in `project_params'
+app/controllers/projects_controller.rb:14:in `create'
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:19:46 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 829)
+
+
+Started POST "/projects" for 127.0.0.1 at 2024-07-17 12:20:26 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"project"=>{"name"=>"Xcel", "user_id"=>1}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+  [1m[36mProject Create (3.4ms)[0m  [1m[32mINSERT INTO "projects" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Xcel"], ["created_at", "2024-07-17 18:20:26.220685"], ["updated_at", "2024-07-17 18:20:26.220685"], ["user_id", 1]]
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 5.1ms | Allocations: 7509)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:20:29 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 935)
+
+
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:27:25 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.6ms | Allocations: 1085)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2024-07-17 12:27:32 -0600
+Processing by ProjectsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:25:in `set_project'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 997)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:35:43 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.5ms | Allocations: 1076)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:36:42 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 935)
+
+
+Started POST "/projects" for 127.0.0.1 at 2024-07-17 12:36:51 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"_json"=>3, "project"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: project):
+  
+app/controllers/projects_controller.rb:29:in `project_params'
+app/controllers/projects_controller.rb:14:in `create'
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:36:55 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 934)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:37:57 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:38:41 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:38:56 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:39:06 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:39:54 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:40:19 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:47:04 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 1075)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:47:16 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:48:33 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:48:44 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:49:20 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:50:09 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:50:49 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:51:14 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 935)
+
+
+Started DELETE "/projects/3" for 127.0.0.1 at 2024-07-17 12:51:20 -0600
+Processing by ProjectsController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:25:in `set_project'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:19:in `destroy'
+  [1m[36mProject Destroy (6.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/projects_controller.rb:19:in `destroy'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:19:in `destroy'
+Completed 204 No Content in 13ms (ActiveRecord: 7.6ms | Allocations: 1894)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:53:09 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 830)
+
+
+Started POST "/projects" for 127.0.0.1 at 2024-07-17 12:53:53 -0600
+Processing by ProjectsController#create as */*
+  Parameters: {"project"=>{"name"=>"Xcel", "user_id"=>1}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+  [1m[36mProject Create (0.9ms)[0m  [1m[32mINSERT INTO "projects" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Xcel"], ["created_at", "2024-07-17 18:53:53.996087"], ["updated_at", "2024-07-17 18:53:53.996087"], ["user_id", 1]]
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 2725)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 12:54:03 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 14:56:10 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.5ms | Allocations: 1077)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 14:58:05 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 3.8ms | ActiveRecord: 1.4ms | Allocations: 5692)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 14:58:22 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 14:59:41 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 14:59:48 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 935)
+
+
+Started PATCH "/projects/4" for 127.0.0.1 at 2024-07-17 15:00:38 -0600
+Processing by ProjectsController#update as */*
+  Parameters: {"project"=>{"name"=>"Excel"}, "id"=>"4"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30:in `set_project'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:19:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:19:in `update'
+  [1m[36mProject Update (6.3ms)[0m  [1m[33mUPDATE "projects" SET "name" = ?, "updated_at" = ? WHERE "projects"."id" = ?[0m  [["name", "Excel"], ["updated_at", "2024-07-17 21:00:38.782862"], ["id", 4]]
+  ↳ app/controllers/projects_controller.rb:19:in `update'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:19:in `update'
+Completed 200 OK in 36ms (Views: 0.5ms | ActiveRecord: 10.4ms | Allocations: 8103)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 15:00:42 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 936)
+
+
+Started PATCH "/projects/4" for 127.0.0.1 at 2024-07-17 15:01:12 -0600
+Processing by ProjectsController#update as */*
+  Parameters: {"project"=>{"name"=>"Xcel"}, "id"=>"4"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30:in `set_project'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:19:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:19:in `update'
+  [1m[36mProject Update (5.6ms)[0m  [1m[33mUPDATE "projects" SET "name" = ?, "updated_at" = ? WHERE "projects"."id" = ?[0m  [["name", "Xcel"], ["updated_at", "2024-07-17 21:01:12.822053"], ["id", 4]]
+  ↳ app/controllers/projects_controller.rb:19:in `update'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:19:in `update'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 7.7ms | Allocations: 3166)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 15:01:16 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 935)
+
+
+Started GET "/projects" for 127.0.0.1 at 2024-07-17 15:31:36 -0600
+Processing by ProjectsController#index as */*
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1075)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2024-07-17 15:32:08 -0600
+Processing by ProjectsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30:in `set_project'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 637)
+
+

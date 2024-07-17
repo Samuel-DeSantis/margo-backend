@@ -10,6 +10,16 @@ class CablesController < ApplicationController
     render json: @cable
   end
 
+  def create
+    @cable = Cable.create(cable_params)
+    render json: @cable
+  end
+
+  def update
+    @cable.update(cable_params)
+    render json: @cable
+  end
+
   def destroy
     @cable.destroy
   end
